@@ -37,5 +37,38 @@ pip3 install Flask -> NEEDED
     or any other components where pre-existing third-party libraries provide 
     common functions. 
 
+pip install Flask-Cors
+pip install mysql-connector-python
+
+virtual environment python (how do you set up??)
+source virt/bin/activate
+
 Links --> THIS WAS VERY HELPFUL
 - https://testdriven.io/blog/developing-a-single-page-app-with-flask-and-vuejs/
+
+# DATABASE
+---------------------------->
+SQLITE
+----------------------------
+add extension sql tools
+1) first run `python3 database_start.py` to create your database table
+2) second run `python3 database_insert.py` to insert some data into your database
+optional... if you need more data
+Run the insert into numbers... sql statement
+ extra information --> https://www.sqlitetutorial.net/sqlite-python/insert/
+
+
+---------------------------->
+MYSQL
+----------------------------
+ login for mysql database
+    host="localhost",
+    user="root",
+    password="Password!"
+
+
+
+
+
+EXTRA INFO
+Your variable sql_insert_query is a tuple consisting of the query string and a tuple of parameters. That raises an AttributeError in the connection when attempting to encode what is expected to be a string. From the handling of that error, the OperationalError raises. Very misleading, I admit. cursor.execute(*sql_insert_query) should fix that. Note the unpack operator (*)
