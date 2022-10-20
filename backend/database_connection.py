@@ -27,24 +27,9 @@ def create_number(conn, number):
     return cur.lastrowid
 
 def save_random_integer(number):
-    database = r"pythonsqlite.db"
+    database = r"../database/pythonsqlite.db"
 
     # create a database connection
     conn = create_connection(database)
     with conn:
         create_number(conn, number)
-
-
-def main():
-    database = r"pythonsqlite.db"
-
-    # create a database connection
-    conn = create_connection(database)
-    with conn:
-        create_number(conn, 35)
-
-        
-
-
-if __name__ == '__main__':
-    main()
