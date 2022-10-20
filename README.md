@@ -39,3 +39,10 @@ pip3 install Flask -> NEEDED
 
 Links --> THIS WAS VERY HELPFUL
 - https://testdriven.io/blog/developing-a-single-page-app-with-flask-and-vuejs/
+
+# DATABASE
+add extension sql tools
+1) first run `python3 database_start.py` to create your database table
+2) second run `python3 database_insert.py` to insert some data into your database
+optional... if you need more data
+Run the insert into numbers... sql statement
