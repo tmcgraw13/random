@@ -46,3 +46,4 @@ add extension sql tools
 2) second run `python3 database_insert.py` to insert some data into your database
 optional... if you need more data
 Run the insert into numbers... sql statement
+ extra information --> https://www.sqlitetutorial.net/sqlite-python/insert/
