@@ -2,6 +2,7 @@
 node_modules
 /dist
 
+pythonsqlite.db
 
 # local env files
 .env.local
