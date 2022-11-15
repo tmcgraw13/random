@@ -37,6 +37,8 @@ pip3 install Flask -> NEEDED
     or any other components where pre-existing third-party libraries provide 
     common functions. 
 
+pip install Flask-Cors
+
 Links --> THIS WAS VERY HELPFUL
 - https://testdriven.io/blog/developing-a-single-page-app-with-flask-and-vuejs/
 
