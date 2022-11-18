@@ -1,28 +1,38 @@
 <template>
-  <ul>
-    <li><router-link to="/">Home</router-link></li>
-    <li><router-link to="/news">News</router-link></li>
-    <li><router-link to="/contact">Contact</router-link></li>
-    <li style="float:right"><router-link class="active" to="/about">About</router-link></li>
-  </ul>
+  <nav class="navbar">
+    <nav class="right-side">
+    <router-link to="/">Home</router-link>
+    <router-link to="/news">News</router-link>
+    <router-link to="/contact">Contact</router-link>
+    </nav>
+    <nav>
+      <router-link class="active" to="/about">About</router-link>
+    </nav>
+
+  </nav>
+  
   <router-view/>
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+
+  nav.navbar{
+    display: flex;
+    justify-content: space-between;
     background-color: #333;
   }
 
-  li {
-    float: left;
+  nav.right-side{
+    display: flex;
   }
 
-  li a {
+  .active{
+    background-color: #04AA6D;
+    
+  }
+
+  nav a {
     display: block;
     color: white;
     text-align: center;
@@ -30,12 +40,8 @@
     text-decoration: none;
   }
 
-  li a:hover:not(.active) {
+  a:hover:not(.active) {
     background-color: #111;
-  }
-
-  .active {
-    background-color: #04AA6D;
   }
 
 </style>
