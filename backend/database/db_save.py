@@ -1,5 +1,5 @@
-from db_connections import execute_input
-from db_mydatabases import MyDatabase
+from database.db_connections import execute_input
+from database.db_mydatabases import MyDatabase
 
 def save_random_integer(number):
     database = MyDatabase.numbers
