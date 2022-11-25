@@ -1,12 +1,14 @@
 import mysql.connector
+from database.db_mydatabases import MyHost
+
 
 def execute_input(mydb,input):
     """ create a database connection to a MySQL database """
     
     conn = mysql.connector.connect(
-        host="localhost",
+        host=MyHost.cloud,
         user="root",
-        password="",
+        password="Password!",
         database=mydb
     )
     with conn:
@@ -15,7 +17,7 @@ def execute_input(mydb,input):
         print(input)
         cur = conn.cursor()
         try:
-            cur.execute(*input)
+            cur.execute(*input) #WHY DO YOU ADD A STAR see readme
             conn.commit() #required to make the changes
             print(mydb + "Successfully Executed Input")
         except mysql.connector.Error as err:

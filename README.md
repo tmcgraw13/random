@@ -38,6 +38,10 @@ pip3 install Flask -> NEEDED
     common functions. 
 
 pip install Flask-Cors
+pip install mysql-connector-python
+
+virtual environment python (how do you set up??)
+source virt/bin/activate
 
 Links --> THIS WAS VERY HELPFUL
 - https://testdriven.io/blog/developing-a-single-page-app-with-flask-and-vuejs/
@@ -60,4 +64,11 @@ MYSQL
  login for mysql database
     host="localhost",
     user="root",
-    password=""
+    password="Password!"
+
+
+
+
+
+EXTRA INFO
+Your variable sql_insert_query is a tuple consisting of the query string and a tuple of parameters. That raises an AttributeError in the connection when attempting to encode what is expected to be a string. From the handling of that error, the OperationalError raises. Very misleading, I admit. cursor.execute(*sql_insert_query) should fix that. Note the unpack operator (*)

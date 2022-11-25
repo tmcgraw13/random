@@ -1,9 +1,11 @@
 import mysql.connector
+from db_mydatabases import MyHost
+
 
 mydb = mysql.connector.connect(
-  host="localhost",
+  host=MyHost.cloud,
   user="root",
-  password=""
+  password="Password!"
 )
 mycursor = mydb.cursor()
 
