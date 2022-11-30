@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     getMessage() {
-      const path = "http://flask-env.eba-svcrvh94.us-east-1.elasticbeanstalk.com/";
+      const path = "https://random-backend-dev.us-east-1.elasticbeanstalk.com/";
       axios
         .get(path)
         .then((res) => {
