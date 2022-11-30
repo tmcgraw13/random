@@ -10,9 +10,9 @@ application = Flask(__name__)
 CORS(application, resources={r'/*': {'origins': '*'}})
 
 # sanity check route
-@application.route('/ping', methods=['GET'])
+@application.route('/', methods=['GET'])
 def get_random_int():
     return str(random_int_generator())
 
 if __name__ == '__main__':
-    application.run(port=8000)
+    application.run(port=443)

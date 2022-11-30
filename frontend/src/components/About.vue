@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     getMessage() {
-      const path = "https://random-backend-dev.us-east-1.elasticbeanstalk.com/ping";
+      const path = "https://random-backend-dev2.us-east-1.elasticbeanstalk.com";
       axios
         .get(path)
         .then((res) => {
