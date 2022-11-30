@@ -19,4 +19,4 @@ def get_random_int():
     return str(random_int_generator())
 
 if __name__ == '__main__':
-    application.run(port=80,debug=True)
+    application.run(port=80)
