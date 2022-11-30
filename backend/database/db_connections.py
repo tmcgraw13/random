@@ -1,12 +1,12 @@
 import mysql.connector
-from database.db_mydatabases import MyHost
+from env import MyCurrentEnv
 
 
 def execute_input(mydb,input):
     """ create a database connection to a MySQL database """
     
     conn = mysql.connector.connect(
-        host=MyHost.cloud,
+        host=MyCurrentEnv.host,
         user="root",
         password="Password!",
         database=mydb

@@ -1,6 +1,8 @@
 from back import random_int_generator
 from flask import Flask
 from flask_cors import CORS
+from env import MyCurrentEnv
+
 
 
 # instantiate the app
@@ -19,4 +21,4 @@ def get_random_int():
     return str(random_int_generator())
 
 if __name__ == '__main__':
-    application.run(port=80)
+    application.run(port=MyCurrentEnv.port)
