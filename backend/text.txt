@@ -1,0 +1,41 @@
+//GENERATE cert
+openssl req -x509 \
+            -sha256 -days 356 \
+            -nodes \
+            -newkey rsa:2048 \
+            -subj "/CN=random-backend-dev.us-east-1.elasticbeanstalk.com//C=US/L=Bristow" \
+            -keyout rootCA.key -out rootCA.crt 
+
+
+
+cat > csr.conf <<EOF
+[ req ]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+
+[ dn ]
+C = US
+ST = Virginia
+L = Bristow
+O = TimsHub
+OU = TimsHub DevFlask
+CN = random-backend-dev.us-east-1.elasticbeanstalk.com
+
+EOF
+
+openssl req -new -key privatekey.pem -out server.csr -config csr.conf
+
+cat > cert.conf <<EOF
+
+
+
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+
+
+EOF
+
+aws iam upload-server-certificate --server-certificate-name elastic-beanstalk-x509 --certificate-body file://server.crt --private-key file://privatekey.pem
