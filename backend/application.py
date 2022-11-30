@@ -12,6 +12,10 @@ CORS(application, resources={r'/*': {'origins': '*'}})
 # sanity check route
 @application.route('/', methods=['GET'])
 def get_random_int():
+    return str("URL works")
+
+@application.route('/ping', methods=['GET'])
+def get_random_int():
     return str(random_int_generator())
 
 if __name__ == '__main__':
