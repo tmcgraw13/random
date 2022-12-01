@@ -1,35 +1,44 @@
 <template>
-  <nav class="navbar">
-    <nav class="right-side">
-    <router-link to="/">Home</router-link>
-    <router-link to="/news">News</router-link>
-    <router-link to="/contact">Contact</router-link>
-    </nav>
-    <nav>
-      <router-link class="active" to="/about">About</router-link>
-    </nav>
+  <div class="fix-position">
+    <div class="navbar">
+      <nav class="flex">
+        <router-link to="/">Home</router-link>
+        <router-link to="/news">News</router-link>
+        <router-link to="/contact">Contact</router-link>
+        <router-link to="/TicTacToe">Tic Tac Toe</router-link>
+      </nav>
+      <nav>
+        <router-link class="active" to="/about">About</router-link>
+      </nav>
 
-  </nav>
+    </div>
+  </div>
   
   <router-view/>
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.fix-position{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
 
-  nav.navbar{
+  .navbar{
     display: flex;
     justify-content: space-between;
     background-color: #333;
+
   }
 
-  nav.right-side{
+  nav.flex{
     display: flex;
   }
 
   .active{
     background-color: #04AA6D;
-    
   }
 
   nav a {

@@ -3,6 +3,7 @@ import Home from '../components/Home.vue';
 import About from '../components/About.vue';
 import News from '../components/News.vue';
 import Contact from '../components/Contact.vue';
+import TicTacToe from '../components/TicTacToeComp/TicTacToe.vue'
 
 
 const routes = [
@@ -25,6 +26,11 @@ const routes = [
     path: '/news',
     name: 'News',
     component: News,
+  },
+  {
+    path: '/tictactoe',
+    name: 'TicTactToe',
+    component: TicTacToe,
   },
 ];
 
