@@ -19,6 +19,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 .fix-position{
   position: fixed;
   width: 100%;
@@ -30,7 +31,6 @@
     display: flex;
     justify-content: space-between;
     background-color: #333;
-
   }
 
   nav.flex{
