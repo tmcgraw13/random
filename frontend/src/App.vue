@@ -7,7 +7,7 @@
         <router-link to="/contact">Contact</router-link>
         <router-link to="/TicTacToe">Tic Tac Toe</router-link>
       </nav>
-      <nav>
+      <nav class="flex">
         <router-link class="active" to="/about">About</router-link>
       </nav>
 
@@ -42,7 +42,9 @@
   }
 
   nav a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     text-align: center;
     padding: 14px 16px;
