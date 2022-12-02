@@ -41,7 +41,7 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
         //  the computers move.
       },
       getMessage() {
-      const path = 'http://127.0.0.1:8000/test';
+      const path = 'https://random-backend-dev2.us-east-1.elasticbeanstalk.com/test';
       axios
         .post(path,{
           board: this.board,
