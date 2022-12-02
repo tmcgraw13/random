@@ -8,5 +8,5 @@ class MyHost:
 
 #SWITCH THESE VARIABLES BEFORE DEPLOYMENT
 class MyCurrentEnv:
-    host=MyHost.local
-    port=SelectPort.local
+    host=MyHost.cloud
+    port=SelectPort.cloud
