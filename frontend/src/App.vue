@@ -7,7 +7,7 @@
         <router-link to="/contact">Contact</router-link>
         <router-link to="/TicTacToe">Tic Tac Toe</router-link>
       </nav>
-      <nav>
+      <nav class="flex">
         <router-link class="active" to="/about">About</router-link>
       </nav>
 
