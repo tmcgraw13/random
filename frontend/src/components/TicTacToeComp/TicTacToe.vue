@@ -1,5 +1,4 @@
 <template>
-  <button @click="getMessage">Click Me</button>
   <p>{{ board }}</p>
   <div class="center">
     <div class="tictactoe-board">
@@ -37,15 +36,13 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
         console.log('this is my column', column)
         console.log('this is my row', row)
         this.spot = [row,column]
-        // TODO implement some AI super-overlord algorithm that will calculate
-        //  the computers move.
+        this.postBoard()
       },
-      getMessage() {
-      const path = 'https://random-backend-dev2.us-east-1.elasticbeanstalk.com/test';
+      postBoard() {
+      const path = 'http://127.0.0.1:8000/test';
       axios
         .post(path,{
           board: this.board,
-          spot: this.spot
         }, { useCredentails: false })
         .then((res) => {
           console.log(res.data)
