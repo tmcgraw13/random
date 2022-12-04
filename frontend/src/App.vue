@@ -42,7 +42,9 @@
   }
 
   nav a {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     text-align: center;
     padding: 14px 16px;
