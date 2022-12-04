@@ -32,13 +32,8 @@ def get_tictactoe_input():
 @application.route('/test', methods=['POST'])
 def post_tictactoe_input():
     b = request.json['board']
-    s = request.json['spot']
     print('this is my board ', b)
-    print('this is my spot ', s)
-    arrays = 3 
-    board = [[''] * 3 for i in range(arrays)]
-    spot = [1,1]
-    return start_turn(s,b)
+    return start_turn(b)
 
 if __name__ == '__main__':
     application.run(port=MyCurrentEnv.port)
