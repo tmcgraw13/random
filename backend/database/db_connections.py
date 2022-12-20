@@ -1,12 +1,10 @@
 import mysql.connector
-from env import MyCurrentEnv
 
-
-def execute_input(mydb,input):
+def execute_input(mydb,sql_input):
     """ create a database connection to a MySQL database """
     
     conn = mysql.connector.connect(
-        host=MyCurrentEnv.host,
+        host="localhost",
         user="root",
         password="Password!",
         database=mydb
@@ -14,10 +12,10 @@ def execute_input(mydb,input):
     with conn:
         # you must create a Cursor object. It will let
         #  you execute all the queries you need
-        print(input)
+        print(sql_input)
         cur = conn.cursor()
         try:
-            cur.execute(*input) #WHY DO YOU ADD A STAR see readme
+            cur.execute(sql_input) #WHY DO YOU ADD A STAR see readme
             conn.commit() #required to make the changes
             print(mydb + "Successfully Executed Input")
         except mysql.connector.Error as err:

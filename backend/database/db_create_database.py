@@ -1,9 +1,8 @@
 import mysql.connector
-from db_mydatabases import MyHost
 
 
 mydb = mysql.connector.connect(
-  host=MyHost.cloud,
+  host="localhost",
   user="root",
   password="Password!"
 )
