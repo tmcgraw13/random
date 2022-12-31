@@ -45,8 +45,7 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
           board: this.board,
         }, { useCredentails: false })
         .then((res) => {
-          console.log(res.data)
-          this.board = res.data;
+          this.board = res.data.board;
         })
         .catch((error) => {
           console.error(error);

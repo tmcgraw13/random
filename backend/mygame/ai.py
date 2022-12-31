@@ -43,8 +43,6 @@ class customAI:
     def recursion(self, board: customBoard, currentPlayer: str, currentOption: list, counter = 10,depth=1):
         
         board2 = board.copy_board()
-        # if currentPlayer != self.player:
-        #     board2.find_last_winning_spot(currentPlayer)
 
         board2.make_move(currentOption[0],currentOption[1],currentPlayer)
         if board2.check_score():
@@ -59,7 +57,6 @@ class customAI:
             return 0
         else:
             scores = []
-            # print('I AM AT A DEPTH of ', depth)
             if currentPlayer == 'O':
                 newPlayer = 'X'
             else:

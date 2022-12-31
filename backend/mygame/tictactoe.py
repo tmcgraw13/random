@@ -5,40 +5,22 @@ from mygame.ai import customAI
 # Initialize
 board = customBoard()
 r = customAI()
-p = 'X'
-
 
 def start_turn(myboard):
+    winnerStatus = ""
     board.update_board(myboard)
     p = 'X'
-    print(p + " your move")
-    #userInput(p,spot)
     if board.check_score():
-        print(p + " is the winner")
-        moves = False
-    if not board.check_moves_available() and moves!=False:
-        print ("It's a tie!")
-        moves = False
+        winnerStatus = p + " is the winner"
+    if not board.check_moves_available():
+        winnerStatus = "It's a tie!"
     p = "O"
     move = r.pickMove(board,p)
     board.make_move(move[0],move[1],p)
     if board.check_score():
-        print(p + " [AI] is the winner")
-        moves = False
-    if not board.check_moves_available() and moves!=False:
-        print ("It's a tie!")
-        moves = False
-    p = "X"
+        winnerStatus = p + " [AI] is the winner"
+    if not board.check_moves_available():
+        winnerStatus = "It's a tie!"
 
-    print("Thank you for playing my game!!!")
-    return board.return_board()
+    return {"board":board.return_board(),"status":winnerStatus}
 
-
-
-def userInput(p,spot):
-        row = int(spot[0])
-        column = int(spot[1])
-        if board.check_space_before_input(row,column):
-            board.make_move(row,column,p)
-        else:
-            print("try again")
