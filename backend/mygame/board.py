@@ -102,29 +102,6 @@ class customBoard:
     def check_space_before_input(self,row,col):
         return self.board[row][col] == ""
 
-    # def check_other_player_winning_spots(self,currentPlayer):
-    #     if currentPlayer == 'O':
-    #         newPlayer = 'X'
-    #     else:
-    #         newPlayer = 'O'               
-        
-
-
-    #-----------------------------------------------------------#
-    #                 Check ai slots available and make a move  #
-    #-----------------------------------------------------------#    
-    # def check_moves_ai(self,p,board):
-    #     self.aiboard = board
-    #     for array in range(self.arrays):
-    #         for val in range(self.arrays):
-    #             if self.board[array][val] == "*":
-    #                 return True # yes moves are available
-    #     return False # no moves are available
-
-    #-----------------------------------------------------------#
-    #          Add color based on the player "X" or "O"         #
-    #-----------------------------------------------------------#
-
 
 #-----------------------------------------------------------#
     #          Create a copy of the board       #
@@ -137,9 +114,6 @@ class customBoard:
                 new_board.make_move(array,val, self.board[array][val])
         #new_board.show_board()
         return new_board
-
-
-
 
     def find_last_winning_spot(self,p):
         copy_board2 = self.copy_board()

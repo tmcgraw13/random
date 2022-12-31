@@ -1,11 +1,9 @@
 from back import random_int_generator
 from mygame.tictactoe import start_turn
-from flask import Flask
+from flask import Flask, Response, jsonify
 from flask_cors import CORS
 from flask import request
 from env import MyCurrentEnv
-
-
 
 # instantiate the app
 application = Flask(__name__)
@@ -32,8 +30,7 @@ def get_tictactoe_input():
 @application.route('/test', methods=['POST'])
 def post_tictactoe_input():
     b = request.json['board']
-    print('this is my board ', b)
-    return start_turn(b)
+    return jsonify(start_turn(b))
 
 if __name__ == '__main__':
     application.run(port=MyCurrentEnv.port)
