@@ -52,6 +52,8 @@ class customAI:
                 extra = board2.find_last_winning_spot(currentPlayer)
                 return counter+extra
             else: # player O
+                if(depth == 1):
+                    return -1000
                 return -counter
         elif not board2.check_moves_available():
             return 0
