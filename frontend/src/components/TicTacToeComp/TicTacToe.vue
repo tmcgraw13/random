@@ -1,10 +1,11 @@
 <template>
   <p>{{ board }}</p>
+  <p>{{ status }}</p>
   <div class="center">
     <div class="tictactoe-board">
       <div v-for="(n, c) in 3">
         <div v-for="(n, r) in 3">
-          <cell @click="performMove(c, r)" :value="board[c][r]"></cell>
+          <cell @click="performMove(c, r)" :value="{move:board[c][r],status:status}"></cell>
         </div>
       </div>
     </div>
@@ -23,9 +24,9 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
           ['', '', ''],
           ['', '', '']
         ],
-      spot: [1,1]
+      status: '',
+      isDisabled: 1
     } },
-
     methods: {
       performMove(column, row) {
         if (this.board[column][row] !== '') {
@@ -33,9 +34,6 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
           return;
         }
         this.board[column][row] = 'X';
-        console.log('this is my column', column)
-        console.log('this is my row', row)
-        this.spot = [row,column]
         this.postBoard()
       },
       postBoard() {
@@ -46,6 +44,7 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
         }, { useCredentails: false })
         .then((res) => {
           this.board = res.data.board;
+          this.status = res.data.status;
         })
         .catch((error) => {
           console.error(error);
