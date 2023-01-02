@@ -1,3 +1,4 @@
+from jinja2 import Undefined
 from mygame.board import customBoard
 from random import randint
 from mygame.ai import customAI
@@ -7,7 +8,7 @@ board = customBoard()
 r = customAI()
 
 def start_turn(myboard):
-    winnerStatus = ""
+    winnerStatus = ''
     board.update_board(myboard)
     p = 'X'
     if board.check_score():
