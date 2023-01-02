@@ -1,13 +1,13 @@
 <template>
-    <div class="cell">
-      <span v-if="value !== ''">{{ value }}</span>
+    <div>
+      <button class="cell" :disabled="value.status !== ''">{{ value.move }}</button>
     </div>
 </template>
 
 <script>
   export default {
     props: {
-      value: String,
+      value: {String,String}
     }
   }
 </script>
