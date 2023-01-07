@@ -5,7 +5,7 @@
         <router-link to="/">Home</router-link>
         <router-link to="/news">News</router-link>
         <router-link to="/contact">Contact</router-link>
-        <router-link to="/TicTacToe">Tic Tac Toe</router-link>
+        <router-link to="/games">Games</router-link>
       </nav>
       <nav class="flex">
         <router-link class="active" to="/about">About</router-link>
@@ -16,7 +16,6 @@
   
   <router-view/>
 </template>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 

@@ -1,7 +1,7 @@
 <template>
   <button @click="getMessage">Click Me</button>
   <div>
-    <h1>Page 4</h1>
+    <h1>Page 5</h1>
     <p>{{ msg }}</p>
   </div>
 </template>

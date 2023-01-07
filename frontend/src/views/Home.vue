@@ -2,11 +2,14 @@
   <div>
     <p>Home</p>
     <h1>Page 1</h1>
+    <Fire/>
   </div>
 </template>
 
 <script>
+import Fire from '../components/TicTacToeComp/Fire.vue'
 export default {
+  components: { Fire },
   name: 'Home',
 };
 </script>

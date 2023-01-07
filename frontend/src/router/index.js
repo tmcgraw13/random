@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../components/Home.vue';
-import About from '../components/About.vue';
-import News from '../components/News.vue';
-import Contact from '../components/Contact.vue';
-import TicTacToe from '../components/TicTacToeComp/TicTacToe.vue'
+import Games from '@/views/Games.vue';
+import Home from '@/views/Home.vue';
+import Contact from '@/views/Contact.vue';
+import News from '@/views/News.vue';
+import About from '@/views/About.vue';
 
 
 const routes = [
@@ -13,9 +13,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About,
+    path: '/news',
+    name: 'News',
+    component: News,
   },
   {
     path: '/contact',
@@ -23,14 +23,14 @@ const routes = [
     component: Contact,
   },
   {
-    path: '/news',
-    name: 'News',
-    component: News,
+    path: '/games',
+    name: 'Games',
+    component: Games,
   },
   {
-    path: '/tictactoe',
-    name: 'TicTactToe',
-    component: TicTacToe,
+    path: '/about',
+    name: 'About',
+    component: About,
   },
 ];
 
