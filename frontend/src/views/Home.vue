@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Fire from '../components/TicTacToeComp/Fire.vue'
+import Fire from '../components/Fire.vue'
 export default {
   components: { Fire },
   name: 'Home',

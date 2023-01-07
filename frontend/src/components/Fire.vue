@@ -1,10 +1,4 @@
 <template>
-    <div class="buttons">
-      <button @click="mounted = !mounted">
-        {{ mounted ? 'Mounted' : 'Unmounted' }}
-      </button>
-      <button @click="startFireworks">Start</button>
-    </div>
     <Fireworks
       ref="fw"
       v-if="mounted"
@@ -25,21 +19,33 @@
   import { Fireworks } from '@fireworks-js/vue'
   import type { FireworksOptions } from '@fireworks-js/vue'
   import { ref, watch } from 'vue'
+  const mounted = ref(false)
 
-  const mounted = ref(true)
+  const props = defineProps({
+    iStatus: Boolean
+  });
+
   const fw = ref<InstanceType<typeof Fireworks>>()
   const options = ref<FireworksOptions>({ opacity: 0.5 })
-  
+
   async function startFireworks() {
     if (!fw.value) return
     fw.value.start()
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise((resolve) => {
+      setTimeout(resolve, 4000);
+    })
     await fw.value.waitStop()
+    mounted.value =false
   }
-  
-  watch(fw, () => startFireworks())
 
- 
+  watch(props, () => {
+    mounted.value =true
+  })
+
+  watch(fw, () => {
+    startFireworks();
+  })
+
   </script>
   
   <style scoped>
