@@ -1,6 +1,11 @@
 <template>
-  <p>{{ board }}</p>
-  <p>{{ status }}</p>
+  <Fire :iStatus="isGameStatus"/>
+  <div class="game-stats">
+    <p>{{ status }}</p>
+    <p>{{ board }}</p>
+     <p> Is there a game status?: {{ isGameStatus }}</p>
+  </div>
+  
   <div class="center">
     <div class="tictactoe-board">
       <div v-for="(n, c) in 3">
@@ -14,10 +19,12 @@
 <script>
 import Cell from './Cell.vue'
 import axios from "axios";
+import Fire from '../Fire.vue'
+
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
   export default {
-    components: { Cell },
+    components: { Cell, Fire },
     data() { return {
       board: [
           ['', '', ''],
@@ -25,7 +32,8 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
           ['', '', '']
         ],
       status: '',
-      isDisabled: 1
+      isDisabled: 1,
+      isGameStatus: false
     } },
     methods: {
       performMove(column, row) {
@@ -45,11 +53,19 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
         .then((res) => {
           this.board = res.data.board;
           this.status = res.data.status;
+          this.isGameStatus = this.checkStatus(res.data.status)
         })
         .catch((error) => {
           console.error(error);
         });
     },
+    checkStatus(currentStat){
+      if(currentStat != ''){
+        return true
+      }
+      else {
+        return false}
+    }
     }
   }
 </script>
@@ -68,5 +84,12 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
     display: flex;
     justify-content: center; /*centers items on the line (the x-axis by default)*/
     align-items: center; /*centers items on the cross-axis (y by default)*/
+  }
+  .game-stats {
+    display: flex;
+    width: 100%;
+    color: red;
+    position: absolute;
+    justify-content: space-between;
   }
 </style>
