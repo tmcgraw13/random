@@ -1,6 +1,7 @@
 from back import random_int_generator
 from mygame.tictactoe import start_turn
-from flask import Flask, Response, jsonify
+from users.user import save_username
+from flask import Flask, jsonify
 from flask_cors import CORS
 from flask import request
 from env import MyCurrentEnv
@@ -31,6 +32,12 @@ def get_tictactoe_input():
 def post_tictactoe_input():
     b = request.json['board']
     return jsonify(start_turn(b))
+
+@application.route('/signup', methods=['POST'])
+def save_user():
+    b = request.json['username']
+    save_username(b)
+    return jsonify(success=True)
 
 if __name__ == '__main__':
     application.run(port=MyCurrentEnv.port)

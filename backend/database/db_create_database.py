@@ -9,6 +9,7 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 mycursor.execute("CREATE DATABASE numbersdb")
+mycursor.execute("CREATE DATABASE usersdb")
 mycursor.execute("SHOW DATABASES")
 for db in mycursor:
   print(db[0])
