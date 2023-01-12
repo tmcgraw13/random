@@ -58,3 +58,9 @@ source virt/bin/activate
     ```
 
 # BACKEND `JAVA`
+
+### Run Java Gradle Application inside root `backend-java\`
+```
+./gradlew bootRun
+
+```
