@@ -48,7 +48,13 @@ source virt/bin/activate
     user="root",
     password="Password!"
     ```
-- Create Database Table
+- First) Create Databases
     ```
-    python3 database_start.py
+    python3 db_create_database.py
     ```
+- Second) Create Tables
+    ```
+    python3 db_create_table.py
+    ```
+
+# BACKEND `JAVA`
