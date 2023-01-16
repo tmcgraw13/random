@@ -40,4 +40,4 @@ def save_user():
     return jsonify(success=True)
 
 if __name__ == '__main__':
-    application.run(port=MyCurrentEnv.port)
+    application.run(port=MyCurrentEnv.port,debug=True)

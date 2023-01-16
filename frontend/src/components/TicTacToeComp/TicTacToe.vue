@@ -45,7 +45,7 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
         this.postBoard()
       },
       postBoard() {
-      const path = 'http://127.0.0.1:8000/test';
+      const path = 'http://127.0.0.1:8082/test';
       axios
         .post(path,{
           board: this.board,
