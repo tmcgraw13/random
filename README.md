@@ -48,7 +48,25 @@ source virt/bin/activate
     user="root",
     password="Password!"
     ```
-- Create Database Table
+- First) Create Databases
     ```
-    python3 database_start.py
+    python3 db_create_database.py
     ```
+- Second) Create Tables
+    ```
+    python3 db_create_table.py
+    ```
+
+# BACKEND `JAVA`
+
+### Run Java Gradle Application inside root `backend-java\`
+```
+./gradlew bootRun
+./gradlew dependencies
+```
+- https://spring.io/guides/gs/actuator-service/#scratch
+- https://spring.io/guides/gs/rest-service/
+
+
+### SPECIAL ADDITIONS
+- https://fireworks.js.org/
