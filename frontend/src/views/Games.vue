@@ -2,7 +2,8 @@
     <div>
       <p>Games</p>
       <h1>Page 4</h1>
-      <TicTacToeVue/>
+      <button @click="reset = !reset">Reset Game</button>
+      <TicTacToeVue :iReset="reset"/>
     </div>
   </template>
   
@@ -10,7 +11,12 @@
   import TicTacToeVue from '@/components/TicTacToeComp/TicTacToe.vue';
   export default {
     name: 'Games',
-    components: {TicTacToeVue}
+    components: {TicTacToeVue},
+    data(){
+      return{
+        reset: false
+      }
+    }
   };
   </script>
   

@@ -39,7 +39,7 @@
   }
 
   watch(props, () => {
-    mounted.value =true
+    mounted.value = props.iStatus
   })
 
   watch(fw, () => {

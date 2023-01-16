@@ -3,6 +3,7 @@
   <div class="game-stats">
     <p>{{ status }}</p>
     <p>{{ board }}</p>
+    <p>Reset? {{ iReset }}</p>
      <p> Is there a game status?: {{ isGameStatus }}</p>
   </div>
   
@@ -25,17 +26,32 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 
   export default {
     components: { Cell, Fire },
+    props: {
+      iReset: Boolean
+    },
+    watch: {
+      iReset: function(value) {
+          this.resetGame();
+        }
+    },
     data() { return {
-      board: [
-          ['', '', ''],
-          ['', '', ''],
-          ['', '', '']
-        ],
+      board: this.initBoard(),
       status: '',
-      isDisabled: 1,
       isGameStatus: false
     } },
     methods: {
+      resetGame(){
+        this.board = this.initBoard();
+        this.status = '';
+        this.isGameStatus = false;
+      },
+      initBoard(){
+        return [
+          ['', '', ''],
+          ['', '', ''],
+          ['', '', '']
+        ]
+      },
       performMove(column, row) {
         if (this.board[column][row] !== '') {
           // Invalid move.
@@ -58,14 +74,15 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
         .catch((error) => {
           console.error(error);
         });
-    },
-    checkStatus(currentStat){
-      if(currentStat != ''){
-        return true
+      },
+      checkStatus(currentStat){
+        console.log(currentStat)
+        if(currentStat != ''){
+          return true
+        }
+        else {
+          return false}
       }
-      else {
-        return false}
-    }
     }
   }
 </script>
