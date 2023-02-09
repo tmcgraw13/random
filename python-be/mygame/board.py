@@ -123,9 +123,13 @@ class customBoard:
                 if self.check_space_before_input(row, col):
                     copy_board2.make_move(row,col,p)
                     if copy_board2.check_score():
-                        return 10000
+                        return 1000
                     copy_board2 = self.copy_board()
-        return 1 
+        return 0
+        
+    def check_opposite_player_spot(self, p, spot):
+        copy_board = self.copy_board()
+        copy_board.make_move()
 
 
 

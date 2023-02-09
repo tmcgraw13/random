@@ -26,10 +26,5 @@ def main():
     execute_input(dbName,sql_create_numbers_table)
     print(dbName + " Tables Successfully Created")
 
-    # print("COMPLETE")
-    #sql_input=(val1,val2,val3,"INSERT INTO 'table' VALUES(%s,%s,%s)")
-
-
-
 if __name__ == '__main__':
     main()

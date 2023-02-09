@@ -76,7 +76,6 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
         });
       },
       checkStatus(currentStat){
-        console.log(currentStat)
         if(currentStat != ''){
           return true
         }
