@@ -66,6 +66,7 @@ source virt/bin/activate
 ```
 - https://spring.io/guides/gs/actuator-service/#scratch
 - https://spring.io/guides/gs/rest-service/
+- https://spring.io/guides/gs/accessing-data-mysql/
 
 
 ### SPECIAL ADDITIONS
