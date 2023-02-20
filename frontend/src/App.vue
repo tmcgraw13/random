@@ -1,6 +1,6 @@
 <template>
   <div class="fix-position">
-    <div class="navbar">
+    <div class="navbar py-0">
       <nav class="flex">
         <router-link to="/">Home</router-link>
         <router-link to="/news">News</router-link>
