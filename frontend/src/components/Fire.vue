@@ -32,7 +32,7 @@
     if (!fw.value) return
     fw.value.start()
     await new Promise((resolve) => {
-      setTimeout(resolve, 4000);
+      setTimeout(resolve, 500);
     })
     await fw.value.waitStop()
     mounted.value =false
